@@ -216,6 +216,8 @@ MonoBehaviour:
   spriteMiddle: {fileID: 1877124002}
   spriteRight: {fileID: 1810693332}
   num: 2
+  maxNum: 5
+  minNum: 1
 --- !u!1 &214221213
 GameObject:
   m_ObjectHideFlags: 0

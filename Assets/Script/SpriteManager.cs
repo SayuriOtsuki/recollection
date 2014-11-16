@@ -12,8 +12,9 @@ public class SpriteManager : MonoBehaviour {
 	int Lnum;
 	int Rnum;
 
-	private SpriteRenderer sRen_M;
+
 	private SpriteRenderer sRen_L;
+	private SpriteRenderer sRen_M;
 	private SpriteRenderer sRen_R;
 
 
@@ -28,8 +29,9 @@ public class SpriteManager : MonoBehaviour {
 
 		MiddleFirstPos = spriteMiddle.transform.position;
 
-		sRen_M = spriteMiddle.GetComponent<SpriteRenderer> ();
+
 		sRen_L = spriteLeft.GetComponent<SpriteRenderer> ();
+		sRen_M = spriteMiddle.GetComponent<SpriteRenderer> ();
 		sRen_R = spriteRight.GetComponent<SpriteRenderer> ();
 
 		//Middleのスプライトのナンバーで考えたいためmax - 1をする
@@ -58,12 +60,14 @@ public class SpriteManager : MonoBehaviour {
 					num++;
 					Lnum = num - 1;
 					Rnum = minNum;
+					OnSlide(num.ToString(), Lnum.ToString(), Rnum.ToString());
 				}
 
 				else if(num == maxNum){
 					num = minNum;
 					Lnum = maxNum;
 					Rnum = num + 1;
+					OnSlide(num.ToString(), Lnum.ToString(), Rnum.ToString());
 				}
 
 				else {
@@ -82,12 +86,14 @@ public class SpriteManager : MonoBehaviour {
 					num--;
 					Lnum = maxNum;
 					Rnum = num + 1;
+					OnSlide(num.ToString(), Lnum.ToString(), Rnum.ToString());
 				}
 				
 				else if(num == minNum){
 					num = maxNum;
 					Lnum = num - 1;
-					Rnum = maxNum;
+					Rnum = minNum;
+					OnSlide(num.ToString(), Lnum.ToString(), Rnum.ToString());
 				}
 				else{
 				num --;
@@ -102,7 +108,8 @@ public class SpriteManager : MonoBehaviour {
 		
 	}
 
-	void OnSlide(string num, string LNum, string RNum){
+	void OnSlide(string num, string LNum, string Rnum){
+		Debug.Log (Lnum + " " + num + " " + Rnum);
 		spriteMiddle.transform.position = MiddleFirstPos;
 		sRen_M.sprite = Resources.Load<Sprite>("Samples/sample_"+ num);
 		sRen_L.sprite = Resources.Load<Sprite>("Samples/sample_"+ Lnum);
