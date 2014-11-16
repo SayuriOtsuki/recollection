@@ -20,10 +20,7 @@ public class SpriteManager : MonoBehaviour {
 
 	void Start () {
 
-		LeftFirstPos = spriteLeft.transform.position;
 		MiddleFirstPos = spriteMiddle.transform.position;
-		RightFirstPos = spriteRight.transform.position;
-
 
 	}
 	
@@ -34,38 +31,37 @@ public class SpriteManager : MonoBehaviour {
 			Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
 			spriteMiddle.transform.Translate(touchDeltaPosition.x * moveSpeed, 0, 0);
 
-//			float limitValueX = Mathf.Clamp (transform.position.x, -13, 13);
-//			spriteLeft.transform.position = new Vector3 (limitValueX, 0, 0);
-//
-//			float limitValueX = Mathf.Clamp (transform.position.x, -13, 13);
-//			spriteRight.transform.position = new Vector3 (limitValueX, 0, 0);
-
-
-
+			float limitPosX = Mathf.Clamp (spriteMiddle.transform.position.x, -13.0f, 13.0f);
+			spriteMiddle.transform.position = new Vector3 (limitPosX, 0, 0);
 		}
 		
 		//ぴたっと止める
 		if(Input.touchCount  > 0 && Input.GetTouch (0).phase == TouchPhase.Ended){
-			Debug.Log ("Ended");
 			//左に動かしたら
 			if(spriteMiddle.transform.position.x < -moveLimitPos){
 
-				spriteLeft.transform.position = LeftFirstPos;
-				spriteMiddle.transform.position = MiddleFirstPos;
-				spriteRight.transform.position = RightFirstPos;
+				OnMoveToLeft();
 
 			}
 
 			 //右に動かしたら
 			if(spriteMiddle.transform.position.x > moveLimitPos){
-				
-				spriteLeft.transform.position = LeftFirstPos;
-				spriteMiddle.transform.position = MiddleFirstPos;
-				spriteRight.transform.position = RightFirstPos;
+
+				OnMoveToRight();
+	
 				
 			}
 
 		}
 		
+	}
+
+	void OnMoveToLeft(){
+		spriteMiddle.transform.position = MiddleFirstPos;
+	}
+
+	void OnMoveToRight(){
+		spriteMiddle.transform.position = MiddleFirstPos;
+
 	}
 }
