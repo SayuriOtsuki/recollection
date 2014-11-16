@@ -32,14 +32,16 @@ public class SpriteManager : MonoBehaviour {
 		if(Input.touchCount > 0 && Input.GetTouch (0).phase == TouchPhase.Moved){
 			
 			Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
-			spriteLeft.transform.Translate(touchDeltaPosition.x * moveSpeed, 0, 0);
 			spriteMiddle.transform.Translate(touchDeltaPosition.x * moveSpeed, 0, 0);
-			spriteRight.transform.Translate(touchDeltaPosition.x * moveSpeed, 0, 0);
-			
-//			float limit_valueY = Mathf.Clamp (transform.position.y,  0.0f, 21.5f);
-//			float limit_valueX = Mathf.Clamp (transform.position.x, -2.7f, 3.0f);
-//			transform.position = new Vector3 (0, 0, transform.position.z);
-//			
+
+//			float limitValueX = Mathf.Clamp (transform.position.x, -13, 13);
+//			spriteLeft.transform.position = new Vector3 (limitValueX, 0, 0);
+//
+//			float limitValueX = Mathf.Clamp (transform.position.x, -13, 13);
+//			spriteRight.transform.position = new Vector3 (limitValueX, 0, 0);
+
+
+
 		}
 		
 		//ぴたっと止める

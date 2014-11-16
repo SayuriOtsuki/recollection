@@ -40,7 +40,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6d0a4f0a4ac14792bc8fe8024eaa870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: .0799999982
+  moveSpeed: .0299999993
   spriteLeft: {fileID: 0}
   spriteMiddle: {fileID: 0}
   spriteRight: {fileID: 0}
