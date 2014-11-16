@@ -7,6 +7,8 @@ public class SpriteManager : MonoBehaviour {
 	public GameObject spriteMiddle;
 	public GameObject spriteRight;
 	public int num = 2;
+	public int maxNum = 5;
+	public int minNum = 1;
 	int Lnum;
 	int Rnum;
 
@@ -30,6 +32,8 @@ public class SpriteManager : MonoBehaviour {
 		sRen_L = spriteLeft.GetComponent<SpriteRenderer> ();
 		sRen_R = spriteRight.GetComponent<SpriteRenderer> ();
 
+		//Middleのスプライトのナンバーで考えたいためmax - 1をする
+
 	}
 	
 	void Update () {
@@ -40,8 +44,8 @@ public class SpriteManager : MonoBehaviour {
 			Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
 			spriteMiddle.transform.Translate(touchDeltaPosition.x * moveSpeed, 0, 0);
 
-			float limitPosX = Mathf.Clamp (spriteMiddle.transform.position.x, -13.0f, 13.0f);
-			spriteMiddle.transform.position = new Vector3 (limitPosX, 0, 0);
+//			float limitPosX = Mathf.Clamp (spriteMiddle.transform.position.x, -13.0f, 13.0f);
+//			spriteMiddle.transform.position = new Vector3 (limitPosX, 0, 0);
 		}
 		
 		//ぴたっと止める
@@ -50,21 +54,47 @@ public class SpriteManager : MonoBehaviour {
 			//左に動かしたら
 			if(spriteMiddle.transform.position.x < -moveLimitPos){
 
+				if(num == maxNum - 1){
+					num++;
+					Lnum = num - 1;
+					Rnum = minNum;
+				}
+
+				else if(num == maxNum){
+					num = minNum;
+					Lnum = maxNum;
+					Rnum = num + 1;
+				}
+
+				else {
 				num++;
 				Lnum = num - 1;
 				Rnum = num + 1;
 				OnSlide(num.ToString(), Lnum.ToString(), Rnum.ToString());
+				}
 
 			}
 
 			 //右に動かしたら
 			if(spriteMiddle.transform.position.x > moveLimitPos){
 
+				if(num == minNum + 1){
+					num--;
+					Lnum = maxNum;
+					Rnum = num + 1;
+				}
+				
+				else if(num == minNum){
+					num = maxNum;
+					Lnum = num - 1;
+					Rnum = maxNum;
+				}
+				else{
 				num --;
 				Lnum = num - 1;
 				Rnum = num + 1;
 				OnSlide(num.ToString(), Lnum.ToString(), Rnum.ToString());
-	
+				}
 				
 			}
 
