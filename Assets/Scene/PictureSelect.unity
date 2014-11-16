@@ -215,6 +215,7 @@ MonoBehaviour:
   spriteLeft: {fileID: 214221213}
   spriteMiddle: {fileID: 1877124002}
   spriteRight: {fileID: 1810693332}
+  num: 2
 --- !u!1 &214221213
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,6 +486,10 @@ Prefab:
     - target: {fileID: 400002, guid: 55c11dd7a42cc4f98b115cd3654c9375, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 55c11dd7a42cc4f98b115cd3654c9375, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 55c11dd7a42cc4f98b115cd3654c9375, type: 2}

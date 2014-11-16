@@ -6,9 +6,13 @@ public class SpriteManager : MonoBehaviour {
 	public GameObject spriteLeft;
 	public GameObject spriteMiddle;
 	public GameObject spriteRight;
+	public int num = 2;
+	int Lnum;
+	int Rnum;
 
-
-	//private SpriteRenderer spriteRenderer;
+	private SpriteRenderer sRen_M;
+	private SpriteRenderer sRen_L;
+	private SpriteRenderer sRen_R;
 
 
 	Vector3 LeftFirstPos;
@@ -22,10 +26,15 @@ public class SpriteManager : MonoBehaviour {
 
 		MiddleFirstPos = spriteMiddle.transform.position;
 
+		sRen_M = spriteMiddle.GetComponent<SpriteRenderer> ();
+		sRen_L = spriteLeft.GetComponent<SpriteRenderer> ();
+		sRen_R = spriteRight.GetComponent<SpriteRenderer> ();
+
 	}
 	
 	void Update () {
-		
+
+		//タッチによる移動
 		if(Input.touchCount > 0 && Input.GetTouch (0).phase == TouchPhase.Moved){
 			
 			Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
@@ -37,17 +46,24 @@ public class SpriteManager : MonoBehaviour {
 		
 		//ぴたっと止める
 		if(Input.touchCount  > 0 && Input.GetTouch (0).phase == TouchPhase.Ended){
+
 			//左に動かしたら
 			if(spriteMiddle.transform.position.x < -moveLimitPos){
 
-				OnMoveToLeft();
+				num++;
+				Lnum = num - 1;
+				Rnum = num + 1;
+				OnSlide(num.ToString(), Lnum.ToString(), Rnum.ToString());
 
 			}
 
 			 //右に動かしたら
 			if(spriteMiddle.transform.position.x > moveLimitPos){
 
-				OnMoveToRight();
+				num --;
+				Lnum = num - 1;
+				Rnum = num + 1;
+				OnSlide(num.ToString(), Lnum.ToString(), Rnum.ToString());
 	
 				
 			}
@@ -56,12 +72,11 @@ public class SpriteManager : MonoBehaviour {
 		
 	}
 
-	void OnMoveToLeft(){
+	void OnSlide(string num, string LNum, string RNum){
 		spriteMiddle.transform.position = MiddleFirstPos;
+		sRen_M.sprite = Resources.Load<Sprite>("Samples/sample_"+ num);
+		sRen_L.sprite = Resources.Load<Sprite>("Samples/sample_"+ Lnum);
+		sRen_R.sprite = Resources.Load<Sprite>("Samples/sample_"+ Rnum);
 	}
-
-	void OnMoveToRight(){
-		spriteMiddle.transform.position = MiddleFirstPos;
-
-	}
+	
 }
