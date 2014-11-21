@@ -60,21 +60,21 @@ public class SpriteManager : MonoBehaviour {
 					num++;
 					Lnum = num - 1;
 					Rnum = minNum;
-					OnSlide(num.ToString(), Lnum.ToString(), Rnum.ToString());
+					OnLeftSlide(num.ToString(), Lnum.ToString(), Rnum.ToString());
 				}
 
 				else if(num == maxNum){
 					num = minNum;
 					Lnum = maxNum;
 					Rnum = num + 1;
-					OnSlide(num.ToString(), Lnum.ToString(), Rnum.ToString());
+					OnLeftSlide(num.ToString(), Lnum.ToString(), Rnum.ToString());
 				}
 
 				else {
-				num++;
-				Lnum = num - 1;
-				Rnum = num + 1;
-				OnSlide(num.ToString(), Lnum.ToString(), Rnum.ToString());
+					num++;
+					Lnum = num - 1;
+					Rnum = num + 1;
+					OnLeftSlide(num.ToString(), Lnum.ToString(), Rnum.ToString());
 				}
 
 			}
@@ -86,20 +86,20 @@ public class SpriteManager : MonoBehaviour {
 					num--;
 					Lnum = maxNum;
 					Rnum = num + 1;
-					OnSlide(num.ToString(), Lnum.ToString(), Rnum.ToString());
+					OnRightSlide(num.ToString(), Lnum.ToString(), Rnum.ToString());
 				}
 				
 				else if(num == minNum){
 					num = maxNum;
 					Lnum = num - 1;
 					Rnum = minNum;
-					OnSlide(num.ToString(), Lnum.ToString(), Rnum.ToString());
+					OnRightSlide(num.ToString(), Lnum.ToString(), Rnum.ToString());
 				}
 				else{
-				num --;
-				Lnum = num - 1;
-				Rnum = num + 1;
-				OnSlide(num.ToString(), Lnum.ToString(), Rnum.ToString());
+					num --;
+					Lnum = num - 1;
+					Rnum = num + 1;
+					OnRightSlide(num.ToString(), Lnum.ToString(), Rnum.ToString());
 				}
 				
 			}
@@ -108,11 +108,19 @@ public class SpriteManager : MonoBehaviour {
 		
 	}
 
-	void OnSlide(string num, string LNum, string Rnum){
+	void OnRightSlide(string num, string LNum, string Rnum){
 		Debug.Log (Lnum + " " + num + " " + Rnum);
 		spriteMiddle.transform.position = MiddleFirstPos;
-		sRen_M.sprite = Resources.Load<Sprite>("Samples/sample_"+ num);
+		sRen_R.sprite = sRen_M.sprite;
+		sRen_M.sprite = sRen_L.sprite;
 		sRen_L.sprite = Resources.Load<Sprite>("Samples/sample_"+ Lnum);
+	}
+
+	void OnLeftSlide(string num, string LNum, string Rnum){
+		Debug.Log (Lnum + " " + num + " " + Rnum);
+		spriteMiddle.transform.position = MiddleFirstPos;
+		sRen_L.sprite = sRen_M.sprite;
+		sRen_M.sprite = sRen_R.sprite;
 		sRen_R.sprite = Resources.Load<Sprite>("Samples/sample_"+ Rnum);
 	}
 	
