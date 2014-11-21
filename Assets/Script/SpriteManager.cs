@@ -104,6 +104,11 @@ public class SpriteManager : MonoBehaviour {
 				
 			}
 
+			//範囲を超えなかったら動かさない
+			else{
+				spriteMiddle.transform.position = MiddleFirstPos;
+			}
+
 		}
 		
 	}
