@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class StartManager : MonoBehaviour {
+public class AlbunSceneManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -14,9 +14,8 @@ public class StartManager : MonoBehaviour {
 	}
 
 	void OnGUI(){
-		if (GUI.Button (new Rect (100, 100, 100, 50), "Start")) {
-			Debug.Log("Start");
-			Application.LoadLevel ("Album");
+		if (GUI.Button (new Rect (300, 300, 100, 50), "Home")) {
+			Application.LoadLevel ("StartScene");
 		}
 	}
 }
