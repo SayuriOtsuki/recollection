@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AlbunSceneManager : MonoBehaviour {
+public class AlbumSceneManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
