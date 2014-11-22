@@ -15,6 +15,7 @@ public class AlbumSceneManager : MonoBehaviour {
 
 	void OnGUI(){
 		if (GUI.Button (new Rect (300, 300, 100, 50), "Home")) {
+			Resources.UnloadUnusedAssets();
 			Application.LoadLevel ("StartScene");
 		}
 	}
