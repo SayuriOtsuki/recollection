@@ -58,7 +58,7 @@ MonoBehaviour:
   spriteMiddle: {fileID: 0}
   spriteRight: {fileID: 0}
   num: 2
-  maxNum: 5
+  maxNum: 190
   minNum: 1
 --- !u!114 &11400004
 MonoBehaviour:
