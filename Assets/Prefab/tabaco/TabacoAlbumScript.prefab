@@ -60,7 +60,7 @@ MonoBehaviour:
   spriteRight: {fileID: 0}
   num: 151
   maxNum: 156
-  minNum: 1
+  minNum: 151
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1

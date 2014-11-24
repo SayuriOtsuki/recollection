@@ -19,7 +19,7 @@ public class AlbumSceneManager : MonoBehaviour {
 			Debug.Log("Home");
 			Application.LoadLevel ("StartScene");
 		}
-		if (GUI.Button (new Rect (400, 300, 100, 50), "Tabaco")) {
+		if (GUI.Button (new Rect (450, 300, 100, 50), "Tabaco")) {
 			Resources.UnloadUnusedAssets();
 			Debug.Log("tabaco");
 			Application.LoadLevel ("tabaco");
