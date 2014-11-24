@@ -26,11 +26,16 @@ public class AlbumSceneManager : MonoBehaviour {
 			Application.LoadLevel ("StartScene");
 		}
 		if (GUI.Button (new Rect (450, 300, 100, 50), "Tabaco")) {
-			Resources.UnloadUnusedAssets();
-			Debug.Log("tabaco");
-			Application.LoadLevel ("tabaco");
-//			spriteManager.maxNum = tabacoMaxNum;
-//			spriteManager.minNum = tabacoMinNum;
+//			Resources.UnloadUnusedAssets();
+//			Debug.Log("tabaco");
+//			Application.LoadLevel ("tabaco");
+			int tabacoSpriteRNum = tabacoMinNum + 1;
+
+			spriteManager.sRen_L.sprite = Resources.Load<Sprite>("Samples/sample_"+ tabacoMaxNum.ToString());
+			spriteManager.sRen_M.sprite = Resources.Load<Sprite>("Samples/sample_"+ tabacoMinNum.ToString());
+			spriteManager.sRen_R.sprite = Resources.Load<Sprite>("Samples/sample_"+ tabacoSpriteRNum.ToString());
+			spriteManager.maxNum = tabacoMaxNum;
+			spriteManager.minNum = tabacoMinNum;
 		}
 
 	}

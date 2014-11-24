@@ -9,13 +9,14 @@ public class SpriteManager : MonoBehaviour {
 	public int num = 2;
 	public int maxNum = 5;
 	public int minNum = 1;
+
 	int Lnum;
 	int Rnum;
 
 
-	private SpriteRenderer sRen_L;
-	private SpriteRenderer sRen_M;
-	private SpriteRenderer sRen_R;
+	public SpriteRenderer sRen_L;
+	public SpriteRenderer sRen_M;
+	public SpriteRenderer sRen_R;
 
 
 	Vector3 LeftFirstPos;
