@@ -58,9 +58,9 @@ MonoBehaviour:
   spriteLeft: {fileID: 0}
   spriteMiddle: {fileID: 0}
   spriteRight: {fileID: 0}
-  num: 151
-  maxNum: 156
-  minNum: 151
+  num: 175
+  maxNum: 184
+  minNum: 175
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -72,6 +72,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0b07ea5a162b4cf4900f2285e6b4c9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tabacoMaxNum: 151
+  tabacoMinNum: 156
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -3,6 +3,12 @@ using System.Collections;
 
 public class AlbumSceneManager : MonoBehaviour {
 
+	
+	public int tabacoMaxNum = 151;
+	public int tabacoMinNum = 156;
+
+	SpriteManager spriteManager;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -23,6 +29,8 @@ public class AlbumSceneManager : MonoBehaviour {
 			Resources.UnloadUnusedAssets();
 			Debug.Log("tabaco");
 			Application.LoadLevel ("tabaco");
+//			spriteManager.maxNum = tabacoMaxNum;
+//			spriteManager.minNum = tabacoMinNum;
 		}
 
 	}
