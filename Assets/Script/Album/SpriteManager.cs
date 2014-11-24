@@ -129,5 +129,43 @@ public class SpriteManager : MonoBehaviour {
 		sRen_M.sprite = sRen_R.sprite;
 		sRen_R.sprite = Resources.Load<Sprite>("Samples/sample_"+ Rnum);
 	}
+
+
+	void OnGUI(){
+		if (GUI.Button (new Rect (300, 300, 100, 50), "Home")) {
+			Resources.UnloadUnusedAssets();
+			Debug.Log("Home");
+			Application.LoadLevel ("StartScene");
+		}
+
+		if (GUI.Button (new Rect (150, 300, 100, 50), "Album,")) {
+			num = 1;
+			int allMinNum = 1;
+			int allMaxNum = 187;
+			
+			int allSpriteRNum = allMinNum + 1;
+			
+			sRen_L.sprite = Resources.Load<Sprite>("Samples/sample_"+ allMaxNum.ToString());
+			sRen_M.sprite = Resources.Load<Sprite>("Samples/sample_"+ allMinNum.ToString());
+			sRen_R.sprite = Resources.Load<Sprite>("Samples/sample_"+ allSpriteRNum.ToString());
+			maxNum = allMaxNum;
+			minNum = allMinNum;
+		}
+
+		if (GUI.Button (new Rect (450, 300, 100, 50), "Tabaco")) {
+			num = 175;
+			int tabacoMinNum = 175;
+			int tabacoMaxNum = 184;
+
+			int tabacoSpriteRNum = tabacoMinNum + 1;
+			
+			sRen_L.sprite = Resources.Load<Sprite>("Samples/sample_"+ tabacoMaxNum.ToString());
+			sRen_M.sprite = Resources.Load<Sprite>("Samples/sample_"+ tabacoMinNum.ToString());
+			sRen_R.sprite = Resources.Load<Sprite>("Samples/sample_"+ tabacoSpriteRNum.ToString());
+			maxNum = tabacoMaxNum;
+			minNum = tabacoMinNum;
+		}
+		
+	}
 	
 }

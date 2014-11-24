@@ -221,6 +221,9 @@ MonoBehaviour:
   num: 175
   maxNum: 184
   minNum: 175
+  sRen_L: {fileID: 0}
+  sRen_M: {fileID: 0}
+  sRen_R: {fileID: 0}
 --- !u!114 &167546927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,7 +231,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1681538365}
   m_GameObject: {fileID: 167546923}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b0b07ea5a162b4cf4900f2285e6b4c9d, type: 3}
   m_Name: 
@@ -551,6 +554,10 @@ Prefab:
       propertyPath: mCamera
       value: 
       objectReference: {fileID: 31052005}
+    - target: {fileID: 11400004, guid: affa5bfd17f474d8ab5c69f5c0caf650, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: affa5bfd17f474d8ab5c69f5c0caf650, type: 2}
   m_RootGameObject: {fileID: 167546923}

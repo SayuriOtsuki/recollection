@@ -17,8 +17,5 @@ public class StartManager : MonoBehaviour {
 		if (GUI.Button (new Rect (100, 100, 100, 50), "Album")) {
 			Application.LoadLevel ("Album");
 		}
-		if (GUI.Button (new Rect ( 300, 100, 100, 50), "Tabaco")) {
-			Application.LoadLevel ("tabaco");
-		}
 	}
 }
