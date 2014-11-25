@@ -132,16 +132,20 @@ public class SpriteManager : MonoBehaviour {
 
 
 	void OnGUI(){
-		if (GUI.Button (new Rect (300, 300, 100, 50), "Home")) {
+
+		int height = 100;
+		int height2 = 200;
+
+		if (GUI.Button (new Rect (150, height, 100, 50), "Home")) {
 			Resources.UnloadUnusedAssets();
 			Debug.Log("Home");
 			Application.LoadLevel ("StartScene");
 		}
 
-		if (GUI.Button (new Rect (150, 300, 100, 50), "Album,")) {
+		if (GUI.Button (new Rect (250, height, 100, 50), "All")) {
 			num = 1;
 			int allMinNum = 1;
-			int allMaxNum = 187;
+			int allMaxNum = 189;
 			
 			int allSpriteRNum = allMinNum + 1;
 			
@@ -152,8 +156,23 @@ public class SpriteManager : MonoBehaviour {
 			minNum = allMinNum;
 		}
 
+		if (GUI.Button (new Rect (350, height, 100, 50), "3rinAuto")) {
+			num = 1;
+			int autoMinNum = 1;
+			int autoMaxNum = 4;
+			
+			int autoSpriteRNum = autoMinNum + 1;
+			
+			sRen_L.sprite = Resources.Load<Sprite>("Samples/sample_"+ autoMaxNum.ToString());
+			sRen_M.sprite = Resources.Load<Sprite>("Samples/sample_"+ autoMinNum.ToString());
+			sRen_R.sprite = Resources.Load<Sprite>("Samples/sample_"+ autoSpriteRNum.ToString());
+			maxNum = autoMaxNum;
+			minNum = autoMinNum;
+		}
+
+
 		//タバコ関連の写真だけ
-		if (GUI.Button (new Rect (450, 300, 100, 50), "Tabaco")) {
+		if (GUI.Button (new Rect (350, height2, 100, 50), "Tabaco")) {
 			num = 175;
 			int tabacoMinNum = 175;
 			int tabacoMaxNum = 184;
