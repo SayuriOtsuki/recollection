@@ -152,6 +152,7 @@ public class SpriteManager : MonoBehaviour {
 			minNum = allMinNum;
 		}
 
+		//タバコ関連の写真だけ
 		if (GUI.Button (new Rect (450, 300, 100, 50), "Tabaco")) {
 			num = 175;
 			int tabacoMinNum = 175;

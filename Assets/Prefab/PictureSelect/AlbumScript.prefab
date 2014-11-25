@@ -54,24 +54,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6d0a4f0a4ac14792bc8fe8024eaa870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: .0199999996
+  moveSpeed: .0799999982
   spriteLeft: {fileID: 0}
   spriteMiddle: {fileID: 0}
   spriteRight: {fileID: 0}
   num: 1
   maxNum: 189
   minNum: 1
+  sRen_L: {fileID: 0}
+  sRen_M: {fileID: 0}
+  sRen_R: {fileID: 0}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b0b07ea5a162b4cf4900f2285e6b4c9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tabacoMaxNum: 151
+  tabacoMinNum: 156
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
