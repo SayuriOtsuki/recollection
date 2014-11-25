@@ -135,14 +135,16 @@ public class SpriteManager : MonoBehaviour {
 
 		int height = 100;
 		int height2 = 200;
+		int width = 100;
+		int tate = 50;
 
-		if (GUI.Button (new Rect (150, height, 100, 50), "Home")) {
+		if (GUI.Button (new Rect (150, height, width, tate), "Home")) {
 			Resources.UnloadUnusedAssets();
 			Debug.Log("Home");
 			Application.LoadLevel ("StartScene");
 		}
 
-		if (GUI.Button (new Rect (250, height, 100, 50), "All")) {
+		if (GUI.Button (new Rect (250, height, width, tate), "All")) {
 			num = 1;
 			int allMinNum = 1;
 			int allMaxNum = 189;
@@ -156,7 +158,7 @@ public class SpriteManager : MonoBehaviour {
 			minNum = allMinNum;
 		}
 
-		if (GUI.Button (new Rect (350, height, 100, 50), "3rinAuto")) {
+		if (GUI.Button (new Rect (350, height, width, tate), "3rinAuto")) {
 			num = 1;
 			int autoMinNum = 1;
 			int autoMaxNum = 4;
@@ -170,9 +172,135 @@ public class SpriteManager : MonoBehaviour {
 			minNum = autoMinNum;
 		}
 
+		if (GUI.Button (new Rect (450, height, width, tate), "Camera")) {
+			num = 5;
+			int cameraMinNum = 5;
+			int cameraMaxNum = 5;
+			
+			int cameraSpriteRNum = cameraMinNum + 1;
+			
+			sRen_L.sprite = Resources.Load<Sprite>("Samples/sample_"+ cameraMaxNum.ToString());
+			sRen_M.sprite = Resources.Load<Sprite>("Samples/sample_"+ cameraMinNum.ToString());
+			sRen_R.sprite = Resources.Load<Sprite>("Samples/sample_"+ cameraSpriteRNum.ToString());
+			maxNum = cameraMaxNum;
+			minNum = cameraMinNum;
+		}
+
+		if (GUI.Button (new Rect (550, height, width, tate), "Dagashi")) {
+			num = 6;
+			int dagashiMinNum = 6;
+			int dagashiMaxNum = 23;
+			
+			int dagashiSpriteRNum = dagashiMinNum + 1;
+			
+			sRen_L.sprite = Resources.Load<Sprite>("Samples/sample_"+ dagashiMaxNum.ToString());
+			sRen_M.sprite = Resources.Load<Sprite>("Samples/sample_"+ dagashiMinNum.ToString());
+			sRen_R.sprite = Resources.Load<Sprite>("Samples/sample_"+ dagashiSpriteRNum.ToString());
+			maxNum = dagashiMaxNum;
+			minNum = dagashiMinNum;
+		}
+
+		if (GUI.Button (new Rect (650, height, width, tate), "Food/Drink")) {
+			num = 24;
+			int fdMinNum = 24;
+			int fdMaxNum = 52;
+			
+			int fdSpriteRNum = fdMinNum + 1;
+			
+			sRen_L.sprite = Resources.Load<Sprite>("Samples/sample_"+ fdMaxNum.ToString());
+			sRen_M.sprite = Resources.Load<Sprite>("Samples/sample_"+ fdMinNum.ToString());
+			sRen_R.sprite = Resources.Load<Sprite>("Samples/sample_"+ fdSpriteRNum.ToString());
+			maxNum = fdMaxNum;
+			minNum = fdMinNum;
+		}
+
+		if (GUI.Button (new Rect (750, height, width, tate), "House")) {
+			num = 53;
+			int houseMinNum = 53;
+			int houseMaxNum = 75;
+			
+			int houseSpriteRNum = houseMinNum + 1;
+			
+			sRen_L.sprite = Resources.Load<Sprite>("Samples/sample_"+ houseMaxNum.ToString());
+			sRen_M.sprite = Resources.Load<Sprite>("Samples/sample_"+ houseMinNum.ToString());
+			sRen_R.sprite = Resources.Load<Sprite>("Samples/sample_"+ houseSpriteRNum.ToString());
+			maxNum = houseMaxNum;
+			minNum = houseMinNum;
+		}
+
+		if (GUI.Button (new Rect (850, height, width, tate), "Sign Board")) {
+			num = 76;
+			int sbMinNum = 76;
+			int sbMaxNum = 93;
+			
+			int sbSpriteRNum = sbMinNum + 1;
+			
+			sRen_L.sprite = Resources.Load<Sprite>("Samples/sample_"+ sbMaxNum.ToString());
+			sRen_M.sprite = Resources.Load<Sprite>("Samples/sample_"+ sbMinNum.ToString());
+			sRen_R.sprite = Resources.Load<Sprite>("Samples/sample_"+ sbSpriteRNum.ToString());
+			maxNum = sbMaxNum;
+			minNum = sbMinNum;
+		}
+
+		if (GUI.Button (new Rect (950, height, width, tate), "Kitchen")) {
+			num = 94;
+			int kitchenMinNum = 94;
+			int kitchenMaxNum = 101;
+			
+			int kitchenSpriteRNum = kitchenMinNum + 1;
+			
+			sRen_L.sprite = Resources.Load<Sprite>("Samples/sample_"+ kitchenMaxNum.ToString());
+			sRen_M.sprite = Resources.Load<Sprite>("Samples/sample_"+ kitchenMinNum.ToString());
+			sRen_R.sprite = Resources.Load<Sprite>("Samples/sample_"+ kitchenSpriteRNum.ToString());
+			maxNum = kitchenMaxNum;
+			minNum = kitchenMinNum;
+		}
+
+		if (GUI.Button (new Rect (1050, height, width, tate), "Other Items")) {
+			num = 102;
+			int oiMinNum = 102;
+			int oiMaxNum = 161;
+			
+			int oiSpriteRNum = oiMinNum + 1;
+			
+			sRen_L.sprite = Resources.Load<Sprite>("Samples/sample_"+ oiMaxNum.ToString());
+			sRen_M.sprite = Resources.Load<Sprite>("Samples/sample_"+ oiMinNum.ToString());
+			sRen_R.sprite = Resources.Load<Sprite>("Samples/sample_"+ oiSpriteRNum.ToString());
+			maxNum = oiMaxNum;
+			minNum = oiMinNum;
+		}
+
+		if (GUI.Button (new Rect (1150, height, width, tate), "Post")) {
+			num = 162;
+			int postMinNum = 162;
+			int postMaxNum = 162;
+			
+			int postSpriteRNum = postMinNum + 1;
+			
+			sRen_L.sprite = Resources.Load<Sprite>("Samples/sample_"+ postMaxNum.ToString());
+			sRen_M.sprite = Resources.Load<Sprite>("Samples/sample_"+ postMinNum.ToString());
+			sRen_R.sprite = Resources.Load<Sprite>("Samples/sample_"+ postSpriteRNum.ToString());
+			maxNum = postMaxNum;
+			minNum = postMinNum;
+		}
+
+		if (GUI.Button (new Rect (1150, height, width, tate), "Radio")) {
+			num = 162;
+			int radioMinNum = 162;
+			int radioMaxNum = 162;
+			
+			int radioSpriteRNum = radioMinNum + 1;
+			
+			sRen_L.sprite = Resources.Load<Sprite>("Samples/sample_"+ radioMaxNum.ToString());
+			sRen_M.sprite = Resources.Load<Sprite>("Samples/sample_"+ radioMinNum.ToString());
+			sRen_R.sprite = Resources.Load<Sprite>("Samples/sample_"+ radioSpriteRNum.ToString());
+			maxNum = radioMaxNum;
+			minNum = radioMinNum;
+		}
+
 
 		//タバコ関連の写真だけ
-		if (GUI.Button (new Rect (350, height2, 100, 50), "Tabaco")) {
+		if (GUI.Button (new Rect (350, height2, width, tate), "Tabaco")) {
 			num = 175;
 			int tabacoMinNum = 175;
 			int tabacoMaxNum = 184;
