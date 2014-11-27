@@ -7,7 +7,7 @@ public class AlbumSceneManager : MonoBehaviour {
 	public int tabacoMaxNum = 151;
 	public int tabacoMinNum = 156;
 
-	SpriteManager spriteManager;
+	SpriteManagerBefore spriteManager;
 
 	// Use this for initialization
 	void Start () {

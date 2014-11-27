@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SpriteManager : MonoBehaviour {
+public class SpriteManagerBefore : MonoBehaviour {
 	public float moveSpeed = 0.02f;
 	public GameObject spriteLeft;
 	public GameObject spriteMiddle;
