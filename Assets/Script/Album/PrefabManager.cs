@@ -3,7 +3,9 @@ using System.Collections;
 
 public class PrefabManager : MonoBehaviour {
 	public GameObject[] imageBoards;
-	int currentPictureNum = -1;
+	int currentNum = 1;
+	public int minNum = 1;
+	public int maxNum = 5;
 
 	// Use this for initialization
 	void Start () {
@@ -15,26 +17,58 @@ public class PrefabManager : MonoBehaviour {
 	
 	}
 	void OnGUI(){
-		int LButton = 100;
-		int RButton = 800;
-		int height = 300;
+		int LButton = 40;
+		int RButton = 450;
+		int height = 200;
 		int width = 100;
 		int tateSize = 50;
 
 		if (GUI.Button (new Rect (LButton, height, width, tateSize), "L")) {
-
-			Debug.Log("L");
-
-			currentPictureNum ++;
-			int nextPictureNum = currentPictureNum + 1;
-			GameObject.Destroy(imageBoards[currentPictureNum]);
-			Instantiate(imageBoards[nextPictureNum],new Vector3(0,0,0),Quaternion.identity);
+			OnMoveToLeft();
 
 		}
 		if (GUI.Button (new Rect (RButton, height, width, tateSize), "R")) {
 
-			Debug.Log("R");
+			OnMoveToRight();
 
 		}
+	}
+
+	void OnMoveToLeft(){
+
+		Debug.Log("L");
+		GameObject currentPrefab = GameObject.Find("sample_" + currentNum.ToString() + "(Clone)");
+		Destroy(currentPrefab);
+
+		if(currentNum == maxNum){
+			currentNum = minNum;
+
+			GameObject nextPrefab = (GameObject)Resources.Load ("Prefab/Album/sample_" + currentNum.ToString());
+			Instantiate(nextPrefab, new Vector3(0,0,0), Quaternion.identity);
+			Debug.Log (currentNum);
+		}
+		else{
+			currentNum ++;
+			
+			GameObject nextPrefab = (GameObject)Resources.Load ("Prefab/Album/sample_" + currentNum.ToString());
+			Instantiate(nextPrefab, new Vector3(0,0,0), Quaternion.identity);
+			Debug.Log (currentNum);
+		}
+
+	}
+
+	void OnMoveToRight(){
+		Debug.Log("R");
+
+		GameObject currentPrefab = GameObject.Find("sample_" + currentNum.ToString() + "(Clone)");
+		Destroy(currentPrefab);
+
+		currentNum --;
+		
+		GameObject nextPrefab = (GameObject)Resources.Load ("Prefab/Album/sample_" + currentNum.ToString());
+		Instantiate(nextPrefab, new Vector3(0,0,0), Quaternion.identity);
+		Debug.Log (currentNum);
+		
+
 	}
 }
