@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class PrefabManager : MonoBehaviour {
-	public GameObject[] imageBoards;
+
 	int currentNum = 1;
 	public int minNum = 1;
 	public int maxNum = 5;
@@ -36,7 +36,6 @@ public class PrefabManager : MonoBehaviour {
 
 	void OnMoveToRight(){
 
-		Debug.Log("L");
 		GameObject currentPrefab = GameObject.Find("sample_" + currentNum.ToString() + "(Clone)");
 		Destroy(currentPrefab);
 
@@ -58,7 +57,6 @@ public class PrefabManager : MonoBehaviour {
 	}
 
 	void OnMoveToLeft(){
-		Debug.Log("R");
 
 		GameObject currentPrefab = GameObject.Find("sample_" + currentNum.ToString() + "(Clone)");
 		Destroy(currentPrefab);
