@@ -34,7 +34,7 @@ public class PrefabManager : MonoBehaviour {
 		}
 	}
 
-	void OnMoveToLeft(){
+	void OnMoveToRight(){
 
 		Debug.Log("L");
 		GameObject currentPrefab = GameObject.Find("sample_" + currentNum.ToString() + "(Clone)");
@@ -57,18 +57,26 @@ public class PrefabManager : MonoBehaviour {
 
 	}
 
-	void OnMoveToRight(){
+	void OnMoveToLeft(){
 		Debug.Log("R");
 
 		GameObject currentPrefab = GameObject.Find("sample_" + currentNum.ToString() + "(Clone)");
 		Destroy(currentPrefab);
 
-		currentNum --;
-		
-		GameObject nextPrefab = (GameObject)Resources.Load ("Prefab/Album/sample_" + currentNum.ToString());
-		Instantiate(nextPrefab, new Vector3(0,0,0), Quaternion.identity);
-		Debug.Log (currentNum);
-		
+		if(currentNum == minNum){
+			currentNum = maxNum;
+			
+			GameObject nextPrefab = (GameObject)Resources.Load ("Prefab/Album/sample_" + currentNum.ToString());
+			Instantiate(nextPrefab, new Vector3(0,0,0), Quaternion.identity);
+			Debug.Log (currentNum);
+		}
+		else{
+			currentNum --;
+			
+			GameObject nextPrefab = (GameObject)Resources.Load ("Prefab/Album/sample_" + currentNum.ToString());
+			Instantiate(nextPrefab, new Vector3(0,0,0), Quaternion.identity);
+			Debug.Log (currentNum);
+		}
 
 	}
 }
