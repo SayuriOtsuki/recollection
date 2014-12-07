@@ -54,12 +54,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 092f5e59ed3624a138108ff2cd9742f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imageBoards:
-  - {fileID: 100000, guid: 4d31b6dd6ea57474eafbf576156b6471, type: 2}
-  - {fileID: 100000, guid: 572803c43cd2b453d8f96cf334a50eb1, type: 2}
-  - {fileID: 100000, guid: 245d66e1179f74a688d660dd8c51b91d, type: 2}
-  - {fileID: 100000, guid: c6a432c0043364750930cd770ede5f1a, type: 2}
-  - {fileID: 100000, guid: e8c17c7bedb734b0eb3da6fe0d1e0cd6, type: 2}
+  minNum: 1
+  maxNum: 189
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
