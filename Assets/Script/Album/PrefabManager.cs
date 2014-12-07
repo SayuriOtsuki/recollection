@@ -61,6 +61,26 @@ public class PrefabManager : MonoBehaviour {
 
 	}
 
+	
+	public void SanrinAuto(){
+			Debug.Log("SanrinAuto");	
+
+			GameObject currentPrefab = GameObject.Find("sample_" + currentNum.ToString() + "(Clone)");
+			Destroy(currentPrefab);
+			
+			currentNum = 1;
+			int autoMinNum = 1;
+			int autoMaxNum = 4;
+			
+			GameObject nextPrefab = (GameObject)Resources.Load ("Prefab/Album/sample_" + autoMinNum.ToString());
+			Instantiate(nextPrefab, new Vector3(0,0,0), Quaternion.identity);
+			Debug.Log ("currentNum = "+ currentNum);
+			
+			maxNum = autoMaxNum;
+			minNum = autoMinNum;
+
+	}
+
 	void OnGUI(){
 
 		int LButton = 40;
@@ -81,7 +101,7 @@ public class PrefabManager : MonoBehaviour {
 		}
 
 		int height = 100;
-		int height2 = 200;
+		int height2 = 150;
 		int width = 100;
 		int tate = 50;
 		int buttonFirstXPos = 150;
@@ -280,23 +300,107 @@ public class PrefabManager : MonoBehaviour {
 			minNum = radioMinNum;
 		}
 		
-		
-		//タバコ関連の写真だけ
-		if (GUI.Button (new Rect (buttonFirstXPos + buttonXPosdif*2, height2, width, tate), "Tabaco")) {
+
+		if (GUI.Button (new Rect (buttonFirstXPos + buttonXPosdif*2, height2, width, tate), "Town")) {
 
 			GameObject currentPrefab = GameObject.Find("sample_" + currentNum.ToString() + "(Clone)");
 			Destroy(currentPrefab);
 
-			currentNum = 175;
-			int tabacoMinNum = 175;
-			int tabacoMaxNum = 184;
+			currentNum = 164;
+			int townMinNum = 164;
+			int townMaxNum = 172;
 
-			GameObject nextPrefab = (GameObject)Resources.Load ("Prefab/Album/sample_" + tabacoMinNum.ToString());
+			GameObject nextPrefab = (GameObject)Resources.Load ("Prefab/Album/sample_" + townMinNum.ToString());
 			Instantiate(nextPrefab, new Vector3(0,0,0), Quaternion.identity);
 			Debug.Log ("currentNum = "+ currentNum);
 
+			maxNum = townMaxNum;
+			minNum = townMinNum;
+		}
+
+		if (GUI.Button (new Rect (buttonFirstXPos + buttonXPosdif*3, height2, width, tate), "School")) {
+			
+			GameObject currentPrefab = GameObject.Find("sample_" + currentNum.ToString() + "(Clone)");
+			Destroy(currentPrefab);
+			
+			currentNum = 173;
+			int schoolMinNum = 173;
+			int schoolMaxNum = 174;
+			
+			GameObject nextPrefab = (GameObject)Resources.Load ("Prefab/Album/sample_" + schoolMinNum.ToString());
+			Instantiate(nextPrefab, new Vector3(0,0,0), Quaternion.identity);
+			Debug.Log ("currentNum = "+ currentNum);
+			
+			maxNum = schoolMaxNum;
+			minNum = schoolMinNum;
+		}
+
+		if (GUI.Button (new Rect (buttonFirstXPos + buttonXPosdif*4, height2, width, tate), "Tabaco")) {
+			
+			GameObject currentPrefab = GameObject.Find("sample_" + currentNum.ToString() + "(Clone)");
+			Destroy(currentPrefab);
+			
+			currentNum = 175;
+			int tabacoMinNum = 175;
+			int tabacoMaxNum = 184;
+			
+			GameObject nextPrefab = (GameObject)Resources.Load ("Prefab/Album/sample_" + tabacoMinNum.ToString());
+			Instantiate(nextPrefab, new Vector3(0,0,0), Quaternion.identity);
+			Debug.Log ("currentNum = "+ currentNum);
+			
 			maxNum = tabacoMaxNum;
 			minNum = tabacoMinNum;
+		}
+
+		if (GUI.Button (new Rect (buttonFirstXPos + buttonXPosdif*5, height2, width, tate), "Phone")) {
+			
+			GameObject currentPrefab = GameObject.Find("sample_" + currentNum.ToString() + "(Clone)");
+			Destroy(currentPrefab);
+			
+			currentNum = 185;
+			int phoneMinNum = 185;
+			int phoneMaxNum = 187;
+			
+			GameObject nextPrefab = (GameObject)Resources.Load ("Prefab/Album/sample_" + phoneMinNum.ToString());
+			Instantiate(nextPrefab, new Vector3(0,0,0), Quaternion.identity);
+			Debug.Log ("currentNum = "+ currentNum);
+			
+			maxNum = phoneMaxNum;
+			minNum = phoneMinNum;
+		}
+
+		if (GUI.Button (new Rect (buttonFirstXPos + buttonXPosdif*6, height2, width, tate), "TV")) {
+			
+			GameObject currentPrefab = GameObject.Find("sample_" + currentNum.ToString() + "(Clone)");
+			Destroy(currentPrefab);
+			
+			currentNum = 188;
+			int tvMinNum = 188;
+			int tvMaxNum = 188;
+			
+			GameObject nextPrefab = (GameObject)Resources.Load ("Prefab/Album/sample_" + tvMinNum.ToString());
+			Instantiate(nextPrefab, new Vector3(0,0,0), Quaternion.identity);
+			Debug.Log ("currentNum = "+ currentNum);
+			
+			maxNum = tvMaxNum;
+			minNum = tvMinNum;
+		}
+
+		if (GUI.Button (new Rect (buttonFirstXPos + buttonXPosdif*7, height2, width, tate), "Barbar")) {
+			
+			GameObject currentPrefab = GameObject.Find("sample_" + currentNum.ToString() + "(Clone)");
+			Destroy(currentPrefab);
+			
+			currentNum = 189;
+			int barbarMinNum = 189;
+			int barbarMaxNum = 189;
+			
+			GameObject nextPrefab = (GameObject)Resources.Load ("Prefab/Album/sample_" + barbarMinNum.ToString());
+			Instantiate(nextPrefab, new Vector3(0,0,0), Quaternion.identity);
+			Debug.Log ("currentNum = "+ currentNum);
+			
+			maxNum = barbarMaxNum;
+			minNum = barbarMinNum;
 		}
 
 	}
