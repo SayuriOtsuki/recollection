@@ -17,7 +17,7 @@ public class PrefabManager : MonoBehaviour {
 	
 	}
 
-	void OnMoveToRight(){
+	public void OnMoveToRight(){
 
 		GameObject currentPrefab = GameObject.Find("sample_" + currentNum.ToString() + "(Clone)");
 		Destroy(currentPrefab);
@@ -39,7 +39,7 @@ public class PrefabManager : MonoBehaviour {
 
 	}
 
-	void OnMoveToLeft(){
+	public void OnMoveToLeft(){
 
 		GameObject currentPrefab = GameObject.Find("sample_" + currentNum.ToString() + "(Clone)");
 		Destroy(currentPrefab);
@@ -59,6 +59,30 @@ public class PrefabManager : MonoBehaviour {
 			Debug.Log ("currentNum = "+ currentNum);
 		}
 
+	}
+
+	public void HomeButton(){
+		Resources.UnloadUnusedAssets();
+		Debug.Log("Home");
+		Application.LoadLevel ("StartScene");
+
+	}
+
+	public void All(){
+		GameObject currentPrefab = GameObject.Find("sample_" + currentNum.ToString() + "(Clone)");
+		Destroy(currentPrefab);
+		
+		currentNum = 1;
+		int allMinNum = 1;
+		int allMaxNum = 189;		
+		
+		GameObject nextPrefab = (GameObject)Resources.Load ("Prefab/Album/sample_" + allMinNum.ToString());
+		Instantiate(nextPrefab, new Vector3(0,0,0), Quaternion.identity);
+		Debug.Log ("currentNum = "+ currentNum);
+		
+		
+		maxNum = allMaxNum;
+		minNum = allMinNum;
 	}
 
 	
@@ -127,7 +151,7 @@ public class PrefabManager : MonoBehaviour {
 		minNum = fdMinNum;
 	}
 
-	public void Home(){
+	public void HomeScene(){
 		GameObject currentPrefab = GameObject.Find("sample_" + currentNum.ToString() + "(Clone)");
 		Destroy(currentPrefab);
 		
@@ -317,56 +341,5 @@ public class PrefabManager : MonoBehaviour {
 		maxNum = barbarMaxNum;
 		minNum = barbarMinNum;
 	}
-	void OnGUI(){
 
-		int LButton = 40;
-		int RButton = 450;
-		int buttonHeight = 200;
-		int buttonWidth = 100;
-		int buttonTateSize = 50;
-
-		
-		if (GUI.Button (new Rect (LButton, buttonHeight, buttonWidth, buttonTateSize), "L")) {
-			OnMoveToLeft();
-			
-		}
-		if (GUI.Button (new Rect (RButton, buttonHeight, buttonWidth, buttonTateSize), "R")) {
-			
-			OnMoveToRight();
-			
-		}
-
-		int height = 100;
-		int height2 = 150;
-		int width = 100;
-		int tate = 50;
-		int buttonFirstXPos = 150;
-		int buttonXPosdif = 100;
-		
-		if (GUI.Button (new Rect (buttonFirstXPos, height, width, tate), "Home")) {
-			Resources.UnloadUnusedAssets();
-			Debug.Log("Home");
-			Application.LoadLevel ("StartScene");
-		}
-		
-		if (GUI.Button (new Rect (buttonFirstXPos + buttonXPosdif, height, width, tate), "All")) {
-
-			GameObject currentPrefab = GameObject.Find("sample_" + currentNum.ToString() + "(Clone)");
-			Destroy(currentPrefab);
-				
-			currentNum = 1;
-			int allMinNum = 1;
-			int allMaxNum = 189;		
-
-			GameObject nextPrefab = (GameObject)Resources.Load ("Prefab/Album/sample_" + allMinNum.ToString());
-			Instantiate(nextPrefab, new Vector3(0,0,0), Quaternion.identity);
-			Debug.Log ("currentNum = "+ currentNum);
-
-
-			maxNum = allMaxNum;
-			minNum = allMinNum;
-		}
-
-
-	}
 }
