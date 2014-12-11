@@ -13,9 +13,13 @@ public class StartManager : MonoBehaviour {
 	
 	}
 
-	void OnGUI(){
-		if (GUI.Button (new Rect (100, 100, 100, 50), "Album")) {
-			Application.LoadLevel ("Album");
-		}
+	public void WatchPicture(){
+
+		Application.LoadLevel ("Album");
+
+	}
+
+	public void Explain(){
+		Debug.Log ("Explain");
 	}
 }
