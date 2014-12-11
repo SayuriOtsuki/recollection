@@ -15,7 +15,7 @@ public class StartManager : MonoBehaviour {
 
 	public void WatchPicture(){
 
-		Application.LoadLevel ("Album");
+		Application.LoadLevel ("CategorySelect");
 
 	}
 
