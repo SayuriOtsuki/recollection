@@ -636,7 +636,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Mat: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
@@ -791,7 +791,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &318007272
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1463,27 +1463,31 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 9e5e966c6b677455185e319d8f4b470f, type: 2}
       propertyPath: m_Colors.m_NormalColor.r
-      value: .411764681
+      value: .501960814
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 9e5e966c6b677455185e319d8f4b470f, type: 2}
       propertyPath: m_Colors.m_NormalColor.g
-      value: .0756920353
+      value: .501960814
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 9e5e966c6b677455185e319d8f4b470f, type: 2}
       propertyPath: m_Colors.m_NormalColor.b
-      value: .0756920353
+      value: .501960814
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 9e5e966c6b677455185e319d8f4b470f, type: 2}
       propertyPath: m_Color.r
-      value: 1
+      value: .196078435
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 9e5e966c6b677455185e319d8f4b470f, type: 2}
       propertyPath: m_Color.g
-      value: 1
+      value: .196078435
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 9e5e966c6b677455185e319d8f4b470f, type: 2}
       propertyPath: m_Color.b
-      value: 1
+      value: .196078435
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 9e5e966c6b677455185e319d8f4b470f, type: 2}
+      propertyPath: m_Colors.m_NormalColor.a
+      value: .501960814
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9e5e966c6b677455185e319d8f4b470f, type: 2}
@@ -2065,7 +2069,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &768276307
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2567,7 +2571,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: .411764681, g: .0756920353, b: .0756920353, a: .501960814}
+    m_NormalColor: {r: .501960814, g: .501960814, b: .501960814, a: .501960814}
     m_HighlightedColor: {r: .501960814, g: .501960814, b: .501960814, a: .698039234}
     m_PressedColor: {r: .345098048, g: .345098048, b: .345098048, a: .698039234}
     m_DisabledColor: {r: .250980407, g: .250980407, b: .250980407, a: .501960814}
@@ -4624,7 +4628,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1783025074
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4744,7 +4748,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1792977557
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5393,7 +5397,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100008, guid: b0d83f7fba3054fdf84d1f73128aa0ed, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100044, guid: b0d83f7fba3054fdf84d1f73128aa0ed, type: 2}
       propertyPath: m_IsActive
@@ -5417,7 +5421,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100022, guid: b0d83f7fba3054fdf84d1f73128aa0ed, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100018, guid: b0d83f7fba3054fdf84d1f73128aa0ed, type: 2}
       propertyPath: m_IsActive
@@ -5428,6 +5432,14 @@ Prefab:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100028, guid: b0d83f7fba3054fdf84d1f73128aa0ed, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100048, guid: b0d83f7fba3054fdf84d1f73128aa0ed, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100068, guid: b0d83f7fba3054fdf84d1f73128aa0ed, type: 2}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
