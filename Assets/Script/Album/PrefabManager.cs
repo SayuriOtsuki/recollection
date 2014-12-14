@@ -1,20 +1,29 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PrefabManager : MonoBehaviour {
 
 	int currentNum = 1;
+	int displayCurrentNum;
+	int displayMaxNum;
 	public int minNum = 1;
 	public int maxNum = 5;
 
+	GameObject pictureNumber;
+	public Text numberText;
+
 	// Use this for initialization
 	void Start () {
-		
+		pictureNumber = GameObject.Find ("pictureNumber");
+		numberText = pictureNumber.GetComponent<Text>();
+		currentNum = minNum;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
+
 	}
 
 	public void OnMoveToRight(){
@@ -28,6 +37,10 @@ public class PrefabManager : MonoBehaviour {
 			GameObject nextPrefab = (GameObject)Resources.Load ("Prefab/Album/sample_" + currentNum.ToString());
 			Instantiate(nextPrefab, new Vector3(0,0,0), Quaternion.identity);
 			Debug.Log ("currentNum = "+ currentNum);
+
+			numberText.text = currentNum + " / " + maxNum;
+
+
 		}
 		else{
 			currentNum ++;
@@ -35,6 +48,9 @@ public class PrefabManager : MonoBehaviour {
 			GameObject nextPrefab = (GameObject)Resources.Load ("Prefab/Album/sample_" + currentNum.ToString());
 			Instantiate(nextPrefab, new Vector3(0,0,0), Quaternion.identity);
 			Debug.Log ("currentNum = "+ currentNum);
+
+			numberText.text = currentNum + " / " + maxNum;
+
 		}
 
 	}
@@ -50,6 +66,10 @@ public class PrefabManager : MonoBehaviour {
 			GameObject nextPrefab = (GameObject)Resources.Load ("Prefab/Album/sample_" + currentNum.ToString());
 			Instantiate(nextPrefab, new Vector3(0,0,0), Quaternion.identity);
 			Debug.Log ("currentNum = "+ currentNum);
+
+			numberText.text = currentNum + " / " + maxNum;
+
+
 		}
 		else{
 			currentNum --;
@@ -57,6 +77,8 @@ public class PrefabManager : MonoBehaviour {
 			GameObject nextPrefab = (GameObject)Resources.Load ("Prefab/Album/sample_" + currentNum.ToString());
 			Instantiate(nextPrefab, new Vector3(0,0,0), Quaternion.identity);
 			Debug.Log ("currentNum = "+ currentNum);
+
+			numberText.text = currentNum + " / " + maxNum;
 		}
 
 	}
@@ -83,6 +105,8 @@ public class PrefabManager : MonoBehaviour {
 		
 		maxNum = allMaxNum;
 		minNum = allMinNum;
+
+
 	}
 
 	
@@ -101,6 +125,7 @@ public class PrefabManager : MonoBehaviour {
 		maxNum = autoMaxNum;
 		minNum = autoMinNum;
 
+
 	}
 	public void Camera(){
 		GameObject currentPrefab = GameObject.Find("sample_" + currentNum.ToString() + "(Clone)");
@@ -116,6 +141,7 @@ public class PrefabManager : MonoBehaviour {
 		
 		maxNum = cameraMaxNum;
 		minNum = cameraMinNum;
+
 	}
 	public void Dagashi(){
 		GameObject currentPrefab = GameObject.Find("sample_" + currentNum.ToString() + "(Clone)");
@@ -132,6 +158,7 @@ public class PrefabManager : MonoBehaviour {
 		
 		maxNum = dagashiMaxNum;
 		minNum = dagashiMinNum;
+
 	}
 
 	public void DrinkFood(){
@@ -149,6 +176,7 @@ public class PrefabManager : MonoBehaviour {
 		
 		maxNum = fdMaxNum;
 		minNum = fdMinNum;
+
 	}
 
 	public void HomeScene(){
@@ -165,6 +193,7 @@ public class PrefabManager : MonoBehaviour {
 		
 		maxNum = houseMaxNum;
 		minNum = houseMinNum;
+
 	}
 
 	public void SignBoard(){
@@ -181,6 +210,7 @@ public class PrefabManager : MonoBehaviour {
 		
 		maxNum = sbMaxNum;
 		minNum = sbMinNum;
+
 	}
 
 	public void Kitchen(){
@@ -197,6 +227,7 @@ public class PrefabManager : MonoBehaviour {
 		
 		maxNum = kitchenMaxNum;
 		minNum = kitchenMinNum;
+
 	}
 
 	public void Others(){
@@ -213,6 +244,7 @@ public class PrefabManager : MonoBehaviour {
 		
 		maxNum = oiMaxNum;
 		minNum = oiMinNum;
+
 	}
 
 	public void Post(){
@@ -229,6 +261,7 @@ public class PrefabManager : MonoBehaviour {
 		
 		maxNum = postMaxNum;
 		minNum = postMinNum;
+
 	}
 
 	public void Radio(){
@@ -245,6 +278,7 @@ public class PrefabManager : MonoBehaviour {
 		
 		maxNum = radioMaxNum;
 		minNum = radioMinNum;
+
 	}
 
 	public void Town(){
@@ -261,6 +295,7 @@ public class PrefabManager : MonoBehaviour {
 		
 		maxNum = townMaxNum;
 		minNum = townMinNum;
+
 	}
 
 	public void School(){
@@ -277,6 +312,7 @@ public class PrefabManager : MonoBehaviour {
 		
 		maxNum = schoolMaxNum;
 		minNum = schoolMinNum;
+
 	}
 
 	public void Tabaco(){
@@ -293,6 +329,7 @@ public class PrefabManager : MonoBehaviour {
 		
 		maxNum = tabacoMaxNum;
 		minNum = tabacoMinNum;
+
 	}
 
 	public void Phone(){
@@ -309,6 +346,7 @@ public class PrefabManager : MonoBehaviour {
 		
 		maxNum = phoneMaxNum;
 		minNum = phoneMinNum;
+
 	}
 	public void TV(){
 		GameObject currentPrefab = GameObject.Find("sample_" + currentNum.ToString() + "(Clone)");
@@ -324,6 +362,7 @@ public class PrefabManager : MonoBehaviour {
 		
 		maxNum = tvMaxNum;
 		minNum = tvMinNum;
+
 	}
 
 	public void Barbar(){
@@ -340,6 +379,7 @@ public class PrefabManager : MonoBehaviour {
 		
 		maxNum = barbarMaxNum;
 		minNum = barbarMinNum;
+
 	}
 
 }
