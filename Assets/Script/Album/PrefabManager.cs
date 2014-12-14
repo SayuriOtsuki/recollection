@@ -38,8 +38,13 @@ public class PrefabManager : MonoBehaviour {
 			Instantiate(nextPrefab, new Vector3(0,0,0), Quaternion.identity);
 			Debug.Log ("currentNum = "+ currentNum);
 
-			numberText.text = currentNum + " / " + maxNum;
-
+			//枚数表示用
+			if(displayCurrentNum == displayMaxNum){
+				displayCurrentNum = 1;
+			}else{
+				displayCurrentNum ++;
+			}
+			numberText.text = displayCurrentNum + " / " + displayMaxNum;
 
 		}
 		else{
@@ -49,8 +54,14 @@ public class PrefabManager : MonoBehaviour {
 			Instantiate(nextPrefab, new Vector3(0,0,0), Quaternion.identity);
 			Debug.Log ("currentNum = "+ currentNum);
 
-			numberText.text = currentNum + " / " + maxNum;
+			//枚数表示用
+			if(displayCurrentNum == displayMaxNum){
+				displayCurrentNum = 1;
+			}else{
+				displayCurrentNum ++;
+			}
 
+			numberText.text = displayCurrentNum + " / " + displayMaxNum;
 		}
 
 	}
@@ -67,9 +78,14 @@ public class PrefabManager : MonoBehaviour {
 			Instantiate(nextPrefab, new Vector3(0,0,0), Quaternion.identity);
 			Debug.Log ("currentNum = "+ currentNum);
 
-			numberText.text = currentNum + " / " + maxNum;
+			//枚数表示用
+			if(displayCurrentNum == 1){
+				displayCurrentNum = displayMaxNum;
+			}else{
+				displayCurrentNum --;
+			}
 
-
+			numberText.text = displayCurrentNum + " / " + displayMaxNum;
 		}
 		else{
 			currentNum --;
@@ -78,7 +94,13 @@ public class PrefabManager : MonoBehaviour {
 			Instantiate(nextPrefab, new Vector3(0,0,0), Quaternion.identity);
 			Debug.Log ("currentNum = "+ currentNum);
 
-			numberText.text = currentNum + " / " + maxNum;
+			//枚数表示用
+			if(displayCurrentNum == 1){
+				displayCurrentNum = displayMaxNum;
+			}else{
+				displayCurrentNum --;
+			}	
+			numberText.text = displayCurrentNum + " / " + displayMaxNum;
 		}
 
 	}
@@ -125,6 +147,9 @@ public class PrefabManager : MonoBehaviour {
 		maxNum = autoMaxNum;
 		minNum = autoMinNum;
 
+		displayCurrentNum = 1;
+		displayMaxNum = 4;
+		numberText.text = displayCurrentNum + " / " + displayMaxNum;
 
 	}
 	public void Camera(){
