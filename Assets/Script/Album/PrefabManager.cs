@@ -27,81 +27,59 @@ public class PrefabManager : MonoBehaviour {
 	}
 
 	public void OnMoveToRight(){
-
+		//前のプレハブ削除
 		GameObject currentPrefab = GameObject.Find("sample_" + currentNum.ToString() + "(Clone)");
 		Destroy(currentPrefab);
 
+		//プレハブ作成
 		if(currentNum == maxNum){
 			currentNum = minNum;
-
-			GameObject nextPrefab = (GameObject)Resources.Load ("Prefab/Album/sample_" + currentNum.ToString());
-			Instantiate(nextPrefab, new Vector3(0,0,0), Quaternion.identity);
-			Debug.Log ("currentNum = "+ currentNum);
-
-			//枚数表示用
-			if(displayCurrentNum == displayMaxNum){
-				displayCurrentNum = 1;
-			}else{
-				displayCurrentNum ++;
-			}
-			numberText.text = displayCurrentNum + " / " + displayMaxNum;
-
 		}
 		else{
-			currentNum ++;
-			
-			GameObject nextPrefab = (GameObject)Resources.Load ("Prefab/Album/sample_" + currentNum.ToString());
-			Instantiate(nextPrefab, new Vector3(0,0,0), Quaternion.identity);
-			Debug.Log ("currentNum = "+ currentNum);
-
-			//枚数表示用
-			if(displayCurrentNum == displayMaxNum){
-				displayCurrentNum = 1;
-			}else{
-				displayCurrentNum ++;
-			}
-
-			numberText.text = displayCurrentNum + " / " + displayMaxNum;
+			currentNum ++; 
 		}
+		GameObject nextPrefab = (GameObject)Resources.Load ("Prefab/Album/sample_" + currentNum.ToString());
+		Instantiate(nextPrefab, new Vector3(0,0,0), Quaternion.identity);
+		Debug.Log ("currentNum = "+ currentNum);
+
+		//枚数表示用
+		if(displayCurrentNum == displayMaxNum){
+			displayCurrentNum = 1;
+		}else{
+			displayCurrentNum ++;
+		}
+			
+
+		numberText.text = displayCurrentNum + " / " + displayMaxNum;
+
 
 	}
 
 	public void OnMoveToLeft(){
-
+		//前のプレハブ削除
 		GameObject currentPrefab = GameObject.Find("sample_" + currentNum.ToString() + "(Clone)");
 		Destroy(currentPrefab);
 
+		//プレハブ作成
 		if(currentNum == minNum){
 			currentNum = maxNum;
-			
-			GameObject nextPrefab = (GameObject)Resources.Load ("Prefab/Album/sample_" + currentNum.ToString());
-			Instantiate(nextPrefab, new Vector3(0,0,0), Quaternion.identity);
-			Debug.Log ("currentNum = "+ currentNum);
 
-			//枚数表示用
-			if(displayCurrentNum == 1){
-				displayCurrentNum = displayMaxNum;
-			}else{
-				displayCurrentNum --;
-			}
-
-			numberText.text = displayCurrentNum + " / " + displayMaxNum;
 		}
 		else{
 			currentNum --;
-			
-			GameObject nextPrefab = (GameObject)Resources.Load ("Prefab/Album/sample_" + currentNum.ToString());
-			Instantiate(nextPrefab, new Vector3(0,0,0), Quaternion.identity);
-			Debug.Log ("currentNum = "+ currentNum);
-
-			//枚数表示用
-			if(displayCurrentNum == 1){
-				displayCurrentNum = displayMaxNum;
-			}else{
-				displayCurrentNum --;
-			}	
-			numberText.text = displayCurrentNum + " / " + displayMaxNum;
 		}
+		GameObject nextPrefab = (GameObject)Resources.Load ("Prefab/Album/sample_" + currentNum.ToString());
+		Instantiate(nextPrefab, new Vector3(0,0,0), Quaternion.identity);
+		Debug.Log ("currentNum = "+ currentNum);
+
+		//枚数表示用
+		if(displayCurrentNum == 1){
+			displayCurrentNum = displayMaxNum;
+		}else{
+			displayCurrentNum --;
+		}	
+		numberText.text = displayCurrentNum + " / " + displayMaxNum;
+
 
 	}
 
@@ -128,6 +106,9 @@ public class PrefabManager : MonoBehaviour {
 		maxNum = allMaxNum;
 		minNum = allMinNum;
 
+		displayCurrentNum = 1;
+		displayMaxNum = allMaxNum - allMinNum + 1;
+		numberText.text = displayCurrentNum + " / " + displayMaxNum;
 
 	}
 
@@ -148,7 +129,7 @@ public class PrefabManager : MonoBehaviour {
 		minNum = autoMinNum;
 
 		displayCurrentNum = 1;
-		displayMaxNum = 4;
+		displayMaxNum = autoMaxNum - autoMinNum + 1;
 		numberText.text = displayCurrentNum + " / " + displayMaxNum;
 
 	}
@@ -167,6 +148,10 @@ public class PrefabManager : MonoBehaviour {
 		maxNum = cameraMaxNum;
 		minNum = cameraMinNum;
 
+		displayCurrentNum = 1;
+		displayMaxNum = cameraMaxNum - cameraMinNum + 1;
+		numberText.text = displayCurrentNum + " / " + displayMaxNum;
+
 	}
 	public void Dagashi(){
 		GameObject currentPrefab = GameObject.Find("sample_" + currentNum.ToString() + "(Clone)");
@@ -183,6 +168,10 @@ public class PrefabManager : MonoBehaviour {
 		
 		maxNum = dagashiMaxNum;
 		minNum = dagashiMinNum;
+
+		displayCurrentNum = 1;
+		displayMaxNum = dagashiMaxNum - dagashiMinNum + 1;
+		numberText.text = displayCurrentNum + " / " + displayMaxNum;
 
 	}
 
@@ -202,6 +191,11 @@ public class PrefabManager : MonoBehaviour {
 		maxNum = fdMaxNum;
 		minNum = fdMinNum;
 
+		displayCurrentNum = 1;
+		displayMaxNum = fdMaxNum - fdMinNum + 1;
+		numberText.text = displayCurrentNum + " / " + displayMaxNum;
+
+
 	}
 
 	public void HomeScene(){
@@ -218,6 +212,11 @@ public class PrefabManager : MonoBehaviour {
 		
 		maxNum = houseMaxNum;
 		minNum = houseMinNum;
+
+		displayCurrentNum = 1;
+		displayMaxNum = houseMaxNum - houseMinNum + 1;
+		numberText.text = displayCurrentNum + " / " + displayMaxNum;
+
 
 	}
 
@@ -236,6 +235,9 @@ public class PrefabManager : MonoBehaviour {
 		maxNum = sbMaxNum;
 		minNum = sbMinNum;
 
+		displayCurrentNum = 1;
+		displayMaxNum = sbMaxNum - sbMinNum + 1;
+		numberText.text = displayCurrentNum + " / " + displayMaxNum;
 	}
 
 	public void Kitchen(){
@@ -252,6 +254,10 @@ public class PrefabManager : MonoBehaviour {
 		
 		maxNum = kitchenMaxNum;
 		minNum = kitchenMinNum;
+
+		displayCurrentNum = 1;
+		displayMaxNum = kitchenMaxNum - kitchenMinNum + 1;
+		numberText.text = displayCurrentNum + " / " + displayMaxNum;
 
 	}
 
@@ -270,6 +276,10 @@ public class PrefabManager : MonoBehaviour {
 		maxNum = oiMaxNum;
 		minNum = oiMinNum;
 
+		displayCurrentNum = 1;
+		displayMaxNum = oiMaxNum - oiMinNum + 1;
+		numberText.text = displayCurrentNum + " / " + displayMaxNum;
+
 	}
 
 	public void Post(){
@@ -286,6 +296,10 @@ public class PrefabManager : MonoBehaviour {
 		
 		maxNum = postMaxNum;
 		minNum = postMinNum;
+
+		displayCurrentNum = 1;
+		displayMaxNum = postMaxNum - postMinNum + 1;
+		numberText.text = displayCurrentNum + " / " + displayMaxNum;
 
 	}
 
@@ -304,6 +318,10 @@ public class PrefabManager : MonoBehaviour {
 		maxNum = radioMaxNum;
 		minNum = radioMinNum;
 
+		displayCurrentNum = 1;
+		displayMaxNum = radioMaxNum - radioMinNum + 1;
+		numberText.text = displayCurrentNum + " / " + displayMaxNum;
+
 	}
 
 	public void Town(){
@@ -320,6 +338,10 @@ public class PrefabManager : MonoBehaviour {
 		
 		maxNum = townMaxNum;
 		minNum = townMinNum;
+
+		displayCurrentNum = 1;
+		displayMaxNum = townMaxNum - townMinNum + 1;
+		numberText.text = displayCurrentNum + " / " + displayMaxNum;
 
 	}
 
@@ -338,6 +360,9 @@ public class PrefabManager : MonoBehaviour {
 		maxNum = schoolMaxNum;
 		minNum = schoolMinNum;
 
+		displayCurrentNum = 1;
+		displayMaxNum = schoolMaxNum - schoolMinNum + 1;
+		numberText.text = displayCurrentNum + " / " + displayMaxNum;
 	}
 
 	public void Tabaco(){
@@ -354,6 +379,10 @@ public class PrefabManager : MonoBehaviour {
 		
 		maxNum = tabacoMaxNum;
 		minNum = tabacoMinNum;
+
+		displayCurrentNum = 1;
+		displayMaxNum = tabacoMaxNum - tabacoMinNum + 1;
+		numberText.text = displayCurrentNum + " / " + displayMaxNum;
 
 	}
 
@@ -372,6 +401,10 @@ public class PrefabManager : MonoBehaviour {
 		maxNum = phoneMaxNum;
 		minNum = phoneMinNum;
 
+		displayCurrentNum = 1;
+		displayMaxNum = phoneMaxNum - phoneMinNum + 1;
+		numberText.text = displayCurrentNum + " / " + displayMaxNum;
+
 	}
 	public void TV(){
 		GameObject currentPrefab = GameObject.Find("sample_" + currentNum.ToString() + "(Clone)");
@@ -387,6 +420,10 @@ public class PrefabManager : MonoBehaviour {
 		
 		maxNum = tvMaxNum;
 		minNum = tvMinNum;
+
+		displayCurrentNum = 1;
+		displayMaxNum = tvMaxNum - tvMinNum + 1;
+		numberText.text = displayCurrentNum + " / " + displayMaxNum;
 
 	}
 
@@ -404,6 +441,10 @@ public class PrefabManager : MonoBehaviour {
 		
 		maxNum = barbarMaxNum;
 		minNum = barbarMinNum;
+
+		displayCurrentNum = 1;
+		displayMaxNum = barbarMaxNum - barbarMinNum + 1;
+		numberText.text = displayCurrentNum + " / " + displayMaxNum;
 
 	}
 
