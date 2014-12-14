@@ -20,12 +20,12 @@ public class CategoryButtonManager : MonoBehaviour {
 
 	public void CSForMen(){
 		Debug.Log ("CSForMen");
-		Application.LoadLevel ("Album");
+		Application.LoadLevel ("AlbumForMen");
 	}
 
 	public void CSForWomen(){
 		Debug.Log ("CSForWomen");
-		Application.LoadLevel ("Album");
+		Application.LoadLevel ("AlbumForWomen");
 	}
 	public void CS60(){
 		Debug.Log ("60");
