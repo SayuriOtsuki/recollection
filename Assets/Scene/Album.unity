@@ -1809,8 +1809,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 092f5e59ed3624a138108ff2cd9742f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  displayMaxNum: 0
   minNum: 5
-  maxNum: 5
+  maxNum: 189
   numberText: {fileID: 1661963582}
 --- !u!4 &649040805
 Transform:
@@ -3815,7 +3816,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 1/189
 --- !u!222 &1661963583
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4701,6 +4702,10 @@ Prefab:
       propertyPath: numberText
       value: 
       objectReference: {fileID: 1661963582}
+    - target: {fileID: 11400002, guid: c0869c483d5ae4cd89ea8b52c851cae0, type: 2}
+      propertyPath: maxNum
+      value: 189
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c0869c483d5ae4cd89ea8b52c851cae0, type: 2}
   m_RootGameObject: {fileID: 649040799}
@@ -5431,6 +5436,10 @@ Prefab:
     - target: {fileID: 100000, guid: 4d15449329c8f456ebe96770ed391604, type: 2}
       propertyPath: m_Name
       value: pictureNumberAll
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 4d15449329c8f456ebe96770ed391604, type: 2}
+      propertyPath: m_Text
+      value: 1/189
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d15449329c8f456ebe96770ed391604, type: 2}

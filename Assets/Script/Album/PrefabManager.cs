@@ -5,8 +5,8 @@ using UnityEngine.UI;
 public class PrefabManager : MonoBehaviour {
 
 	int currentNum = 1;
-	int displayCurrentNum;
-	int displayMaxNum;
+	int displayCurrentNum = 1;
+	public int displayMaxNum;
 	public int minNum = 1;
 	public int maxNum = 5;
 
