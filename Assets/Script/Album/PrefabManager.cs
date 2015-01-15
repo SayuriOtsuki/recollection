@@ -10,12 +10,12 @@ public class PrefabManager : MonoBehaviour {
 	public int minNum = 1;
 	public int maxNum = 5;
 
-	GameObject pictureNumber;
+	public GameObject pictureNumber;
 	public Text numberText;
 
 	// Use this for initialization
 	void Start () {
-		pictureNumber = GameObject.Find ("pictureNumber");
+
 		numberText = pictureNumber.GetComponent<Text>();
 		currentNum = minNum;
 	}
@@ -59,14 +59,16 @@ public class PrefabManager : MonoBehaviour {
 		//前のプレハブ削除
 		GameObject currentPrefab = GameObject.Find("sample_" + currentNum.ToString() + "(Clone)");
 		Destroy(currentPrefab);
-
+		Debug.Log ("DestroyLeft");
 		//プレハブ作成
 		if(currentNum == minNum){
 			currentNum = maxNum;
 
+
 		}
 		else{
 			currentNum --;
+
 		}
 		GameObject nextPrefab = (GameObject)Resources.Load ("Prefab/Album/sample_" + currentNum.ToString());
 		Instantiate(nextPrefab, new Vector3(0,0,0), Quaternion.identity);
