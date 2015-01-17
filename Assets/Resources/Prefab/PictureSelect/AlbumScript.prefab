@@ -52,8 +52,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 092f5e59ed3624a138108ff2cd9742f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  displayMaxNum: 0
   minNum: 5
-  maxNum: 5
+  maxNum: 80
+  pictureNumber: {fileID: 0}
   numberText: {fileID: 0}
 --- !u!114 &11400006
 MonoBehaviour:
