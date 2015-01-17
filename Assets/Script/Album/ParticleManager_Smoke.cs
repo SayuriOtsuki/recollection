@@ -5,11 +5,11 @@ public class ParticleManager_Smoke : MonoBehaviour {
 
 //	public GUIText targetGUIText;
 //	public GameObject cube;
-	GameObject smoke;
+	public GameObject smoke;
 	
 	// Use this for initialization
 	void Start () {
-		smoke = GameObject.Find ("smoke");
+
 	}
 	
 	// Update is called once per frame
