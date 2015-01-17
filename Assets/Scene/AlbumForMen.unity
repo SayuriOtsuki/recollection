@@ -494,6 +494,18 @@ Prefab:
       propertyPath: numberText
       value: 
       objectReference: {fileID: 1661963582}
+    - target: {fileID: 11400002, guid: c0869c483d5ae4cd89ea8b52c851cae0, type: 2}
+      propertyPath: displayMaxNum
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: c0869c483d5ae4cd89ea8b52c851cae0, type: 2}
+      propertyPath: minNum
+      value: 62
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: c0869c483d5ae4cd89ea8b52c851cae0, type: 2}
+      propertyPath: maxNum
+      value: 70
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c0869c483d5ae4cd89ea8b52c851cae0, type: 2}
   m_RootGameObject: {fileID: 649040799}
