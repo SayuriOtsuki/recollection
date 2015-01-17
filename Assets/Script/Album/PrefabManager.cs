@@ -6,17 +6,17 @@ public class PrefabManager : MonoBehaviour {
 
 	int currentNum = 1;
 	int displayCurrentNum = 1;
-	public int displayMaxNum;
+	public int displayMaxNum = 80;
 	public int minNum = 1;
-	public int maxNum = 5;
+	public int maxNum = 80;
 
-	public GameObject pictureNumber;
+//	public GameObject pictureNumber;
 	public Text numberText;
 
 	// Use this for initialization
 	void Start () {
 
-		numberText = pictureNumber.GetComponent<Text>();
+		numberText = numberText.GetComponent<Text>();
 		currentNum = minNum;
 	}
 	
@@ -59,17 +59,21 @@ public class PrefabManager : MonoBehaviour {
 		//前のプレハブ削除
 		GameObject currentPrefab = GameObject.Find("recol_" + currentNum.ToString() + "(Clone)");
 		Destroy(currentPrefab);
+
 		Debug.Log ("DestroyLeft");
+		Debug.Log ("currentNum = "+ currentNum);
+		Debug.Log ("minNum = "+ minNum);
 		//プレハブ作成
 		if(currentNum == minNum){
 			currentNum = maxNum;
-
+		
 
 		}
 		else{
 			currentNum --;
-
+		
 		}
+
 		GameObject nextPrefab = (GameObject)Resources.Load ("Prefab/Album/recol_" + currentNum.ToString());
 		Instantiate(nextPrefab, new Vector3(0,0,0), Quaternion.identity);
 		Debug.Log ("currentNum = "+ currentNum);
@@ -98,7 +102,7 @@ public class PrefabManager : MonoBehaviour {
 		
 		currentNum = 1;
 		int allMinNum = 1;
-		int allMaxNum = 189;		
+		int allMaxNum = 80;		
 		
 		GameObject nextPrefab = (GameObject)Resources.Load ("Prefab/Album/recol_" + allMinNum.ToString());
 		Instantiate(nextPrefab, new Vector3(0,0,0), Quaternion.identity);
