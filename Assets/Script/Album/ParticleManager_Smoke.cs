@@ -5,8 +5,8 @@ public class ParticleManager_Smoke : MonoBehaviour {
 
 //	public GUIText targetGUIText;
 //	public GameObject cube;
-	public GameObject smoke;
-	
+	ParticleSystem smoke;
+
 	// Use this for initialization
 	void Start () {
 
@@ -18,30 +18,24 @@ public class ParticleManager_Smoke : MonoBehaviour {
 		
 		if (Input.touchCount > 0)
 		{
-			
-			Touch touch = Input.GetTouch(0);
-			
-			Vector2 touchingPos = new Vector2();
-			touchingPos = Camera.main.ScreenToWorldPoint(touch.position);
-			Collider2D colition2d = Physics2D.OverlapPoint(touchingPos);
+			Debug.Log ("Touch");
+
+			Vector3 screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
+			Vector3 newVector = Camera.main.ScreenToWorldPoint( new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
+
+			Vector2 tapPoint = new Vector2(newVector.x, newVector.y);
+			Collider2D colition2d = Physics2D.OverlapPoint(tapPoint);
 								
 				
 				if (colition2d != null)
 				{ 
 					Debug.Log(colition2d.name);
+					smoke = colition2d.GetComponent<ParticleSystem>();
 					smoke.particleSystem.Play();
-//
-//					colition2d.rigidbody2D.velocity = Vector2.zero;
-//					colition2d.rigidbody2D.angularVelocity = 0f;
-//					
-//					Vector2 objectPos = colition2d.rigidbody2D.transform.position;
-//					Vector2  direction = touchingPos - objectPos;
-//					direction *= cube.rigidbody2D.mass * 1000;
-//					colition2d.rigidbody2D.velocity *= 0.95f;
-//					
-//					colition2d.rigidbody2D.AddForceAtPosition(direction, objectPos);
-//					
+
 					
+				}else{
+					Debug.Log("NUll");
 				}
 		}
 		
