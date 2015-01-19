@@ -7,6 +7,7 @@ public class PosterManager : MonoBehaviour {
 	bool isKirinPoster = false;
 
 	SpriteRenderer spriteRenderer;
+	AudioSource audioSource;
 	// Use this for initialization
 	void Start () {
 	
@@ -30,16 +31,20 @@ public class PosterManager : MonoBehaviour {
 				if (colition2d.name == "poster_asahi")
 				{ 
 					Debug.Log(colition2d.name);
+
 					spriteRenderer = colition2d.GetComponent<SpriteRenderer>();
 					isAsahiPoster =! isAsahiPoster;
-
-					if(!isAsahiPoster){
-				
-					spriteRenderer.sprite = Resources.Load<Sprite>("SourcePictures/poster_asahi");
-
-					}
+					Debug.Log(isAsahiPoster);
 
 					if(isAsahiPoster){
+					
+					
+					spriteRenderer.sprite = Resources.Load<Sprite>("SourcePictures/poster_asahi");
+					audioSource = colition2d.GetComponent<AudioSource>();
+					audioSource.Play();
+					}
+
+					if(!isAsahiPoster){
 					
 					spriteRenderer.sprite = Resources.Load<Sprite>("None");
 
@@ -50,13 +55,15 @@ public class PosterManager : MonoBehaviour {
 					spriteRenderer = colition2d.GetComponent<SpriteRenderer>();
 					isKirinPoster =! isKirinPoster;
 
-					if(!isKirinPoster){
+					if(isKirinPoster){
 						
-						spriteRenderer.sprite = Resources.Load<Sprite>("SourcePictures/poster_kirin");
+					spriteRenderer.sprite = Resources.Load<Sprite>("SourcePictures/poster_kirin");
+					audioSource = colition2d.GetComponent<AudioSource>();
+					audioSource.Play();
 						
 					}
 					
-					if(isKirinPoster){
+					if(!isKirinPoster){
 						
 						spriteRenderer.sprite = Resources.Load<Sprite>("None");
 						
