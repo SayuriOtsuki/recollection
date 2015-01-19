@@ -31,18 +31,20 @@ public class RadioManager : MonoBehaviour {
 				Collider2D colition2d = Physics2D.OverlapPoint(tapPoint);
 				
 				
-				if (colition2d == music1){ 
+				if (colition2d.name == "music1"){ 
 
 					Debug.Log(colition2d.name);
 					
-				}else if(colition2d == music2){
+				}else if(colition2d.name == "music2"){
 
 					Debug.Log(colition2d.name);
 
-				}else if(colition2d == music2){
+				}else if(colition2d.name == "music3"){
 
 					Debug.Log(colition2d.name);
 
+				}else if(colition2d == null){
+					Debug.Log("Null");
 				}
 			}
 		}
