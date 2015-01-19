@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ParticleSortingLayer : MonoBehaviour {
+public class SortingLayer_particle : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
