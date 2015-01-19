@@ -48,7 +48,20 @@ public class PosterManager : MonoBehaviour {
 				}else if(colition2d.name == "poster_kirin") {
 					Debug.Log(colition2d.name);
 					spriteRenderer = colition2d.GetComponent<SpriteRenderer>();
-					spriteRenderer.sprite = Resources.Load<Sprite>("SourcePictures/poster_kirin");
+					isKirinPoster =! isKirinPoster;
+
+					if(!isKirinPoster){
+						
+						spriteRenderer.sprite = Resources.Load<Sprite>("SourcePictures/poster_kirin");
+						
+					}
+					
+					if(isKirinPoster){
+						
+						spriteRenderer.sprite = Resources.Load<Sprite>("None");
+						
+					}
+
 				}
 			}
 		}
