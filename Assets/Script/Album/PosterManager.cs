@@ -5,6 +5,7 @@ public class PosterManager : MonoBehaviour {
 
 	bool isAsahiPoster = false;
 	bool isKirinPoster = false;
+	bool isPict;
 
 	SpriteRenderer spriteRenderer;
 	AudioSource audioSource;
@@ -68,7 +69,24 @@ public class PosterManager : MonoBehaviour {
 						spriteRenderer.sprite = Resources.Load<Sprite>("None");
 						
 					}
-
+				}else if(colition2d.name == "pict_rikidoZan") {
+					Debug.Log(colition2d.name);
+					spriteRenderer = colition2d.GetComponent<SpriteRenderer>();
+					isPict =! isPict;
+					
+					if(isPict){
+						
+						spriteRenderer.sprite = Resources.Load<Sprite>("SourcePictures/pict_rikidoZan");
+						audioSource = colition2d.GetComponent<AudioSource>();
+						audioSource.Play();
+						
+					}
+					
+					if(!isPict){
+						
+						spriteRenderer.sprite = Resources.Load<Sprite>("None");
+						
+					}
 				}
 			}
 		}
