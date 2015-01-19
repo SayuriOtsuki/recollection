@@ -3,6 +3,9 @@ using System.Collections;
 
 public class PosterManager : MonoBehaviour {
 
+	bool isAsahiPoster = false;
+	bool isKirinPoster = false;
+
 	SpriteRenderer spriteRenderer;
 	// Use this for initialization
 	void Start () {
@@ -28,8 +31,20 @@ public class PosterManager : MonoBehaviour {
 				{ 
 					Debug.Log(colition2d.name);
 					spriteRenderer = colition2d.GetComponent<SpriteRenderer>();
+					isAsahiPoster =! isAsahiPoster;
+
+					if(!isAsahiPoster){
+				
 					spriteRenderer.sprite = Resources.Load<Sprite>("SourcePictures/poster_asahi");
+
+					}
+
+					if(isAsahiPoster){
 					
+					spriteRenderer.sprite = Resources.Load<Sprite>("None");
+
+					}
+
 				}else if(colition2d.name == "poster_kirin") {
 					Debug.Log(colition2d.name);
 					spriteRenderer = colition2d.GetComponent<SpriteRenderer>();
